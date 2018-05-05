@@ -4,7 +4,7 @@ filename = "test_dataset.txt"
 with codecs.open(filename, encoding='utf-8') as f:
     txt = f.read()
 f.close()
-file = open("out.txt",'w', encoding='utf-8')
+file = open("abc.txt",'w', encoding='utf-8')
 
 ''' testing '''
 # file_maatra = open("maatra.txt",'w', encoding='utf-8')
@@ -33,6 +33,7 @@ while(i<len(txt)):
         if a.rfind(k)!=-1:
             if(len(a.split(k)[0])!=1):
                 stems.append(a.split(k)[0])
+                file.write(str(a.split(k)[0]+'\n'))
     if (txt[i] == '\n'):
         i = i+1
-sets=set(stems)
+file.close()

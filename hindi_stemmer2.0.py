@@ -20,9 +20,6 @@ to_remove = ['\ufeff', '\r']
 i=0
 stems=[]
 while(i<len(txt)):
-    
-    
-    
     a = []
     while(txt[i]!='\n'):
         a.append(txt[i])

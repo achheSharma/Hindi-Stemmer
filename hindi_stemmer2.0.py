@@ -4,7 +4,7 @@ filename = "test_dataset.txt"
 with codecs.open(filename, encoding='utf-8') as f:
     txt = f.read()
 f.close()
-file = open("abc.txt",'w', encoding='utf-8')
+file = open("output.txt",'w', encoding='utf-8')
 
 ''' testing '''
 # file_maatra = open("maatra.txt",'w', encoding='utf-8')
@@ -26,11 +26,14 @@ while(i<len(txt)):
         i=i+1
     a = [k for k in a if k not in to_remove]
     a= ''.join(a)
+    b = a
+    file.write(b + " : ")
     for k in maatra:
         if a.rfind(k)!=-1:
             if(len(a.split(k)[0])!=1):
                 stems.append(a.split(k)[0])
-                file.write(str(a.split(k)[0]+'\n'))
+                file.write(str(a.split(k)[0]) + ", ")
+    file.write("\n")
     if (txt[i] == '\n'):
         i = i+1
 file.close()
